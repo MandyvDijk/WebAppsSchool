@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/BroodBanket.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    
+    <body>
+        <div data-role="header">
+            <h1>BMW-registratie</h1>
+        </div>
+    <div role="main" class="ui-content">
+        <form  action method = "post">
+            <div>
+                <label class="ui-hidden-accessible" for="naam">Vul je naam in:</label>
+                <input name="naam" id="naam" type="text" placeholder="Naam aanbieder" value data-mini ="true" required> 
+            </div>
+            <br>
+            <div>
+                <label for="model">Kies je model:</label>
+                <select name="model" id="model" data-native-menu="false">
+                    <option value = "cabrio">Cabrio</option>
+                    <option value = "anders">Anders</option>
+                </select>
+            </div>
+            <br>
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                    <div class="ui-controlgroup-controls">   
+                        <label for="zwaar" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Zwaar</label>
+                        <input type = "radio" name= "carosserie" id="zwaar" value= "zwaar" checked="checked">
+                    </div>
+                    <div class="ui-controlgroup-controls">   
+                        <label for="licht" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Licht</label>
+                        <input type = "radio" name= "carosserie" id="licht" value= "licht">
+                    </div>
+                </fieldset>
+                
+            <br>
+            
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                    <div class="ui-controlgroup-controls">   
+                        <label for="benzine" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Benzine</label>
+                        <input type = "radio" name= "brandstof" id="benzine" value= "benzine" checked="checked">
+                    </div>
+                    <div class="ui-controlgroup-controls">   
+                        <label for="diesel" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Diesel</label>
+                        <input type = "radio" name= "brandstof" id="diesel" value= "diesel">
+                    </div>
+                </fieldset>
+                
+            <br>
+            
+            <div>
+                <label for="jaar">Kies het bouwjaar:</label>
+                <select name= "jaar" id="jaar" data-native-menu="false">
+                    <option value="1999">1990-1999</option>
+                    <option value = "2000">2000-2003</option>
+                    <option value = "2004">2004-2006</option>
+                    <option value = "2007">2007-2010</option>
+                    <option value = "2011">2011-2014</option>
+                    <option value = "2015">2015-2017</option>
+                </select>
+            </div>
+            <br>
+            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                    <div class="ui-controlgroup-controls">   
+                        <label for="wit" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Wit</label>
+                        <input type = "radio" name= "kleur" id="wit" value= "wit" checked="checked">
+                    </div>
+                    <div class="ui-controlgroup-controls">   
+                        <label for="blauw" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Blauw</label>
+                        <input type = "radio" name= "kleur" id="blauw" value= "blauw">
+                    </div>
+                    <div class="ui-controlgroup-controls">   
+                        <label for="zwart" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Zwart</label>
+                        <input type = "radio" name= "kleur" id="zwart" value= "zwart">
+                    </div>
+                    <div class="ui-controlgroup-controls">   
+                        <label for="rood" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Rood</label>
+                        <input type = "radio" name= "kleur" id="rood" value= "rood">
+                    </div>
+                </fieldset>
+            <br>
+            
+            <div>
+                <label for="km">Aantal gereden km:</label>
+                <input type="range" name="km" id="km" data-highlight="true" min="0" max="300000" value="100000">
+            </div>
+            
+            Overige opties:<br>
+            <div>
+                <label for="opties">Kies de extra opties:</label>
+                <!-- multiple select?? is onderstaande wat daarmee bedoeld wordt???-->
+                <select name="opties" id="opties">
+                    <optgroup label="Kleur velgen">
+                        <option value="zilver">Zilverkleurige velgen</option>
+                        <option value="zwart">Zwartkleurige velgen</option>
+                    </optgroup>
+                    <optgroup label="extra grote kofferbak">
+                        <option value="ja">Ja</option>
+                        <option value="nee">Nee</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="prijs" class="ui-hidden-accessible">Vul de vraagprijs in:</label>
+                <input type = "text" name="prijs" id="prijs" placeholder="Vraagprijs" value data-mini ="true" required>
+            </div>
+        </div>
+    </body>
+</html>

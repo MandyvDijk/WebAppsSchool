@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+    <head>
+        <base href="#panelswipeopen.html">
+        <title>SHOPPEN</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/BroodBanket.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+        <!-- zorgen dat plaatje schaalt-->
+        <style> img {max-width: 100%; max-height: 100%;} </style>
+        <script id="panel-init">
+		$(function()
+		{
+			$("body>[data-role='panel']").panel();
+			$("body > [data-role='panel'] [data-role='collapsible']").collapsible();
+			$("body > [data-role='panel'] [data-role='listview']").listview();
+			
+			if(typeof(Storage)!=="undefined")
+			{
+				var tekst = "<p>Op jouw shoppinglist staan:</p>";
+				var jas1 = sessionStorage.getItem("jas1");
+				if ( jas1 == "1") {tekst = tekst + "<p><b>Monroe</b><br />gray jacket &euro; 299</p>";}
+				var jas2 = sessionStorage.getItem("jas2");
+				if ( jas2 == "1") {tekst = tekst + "<p><b>Classic</b><br />black jacket &euro; 225</p>";}
+				var jas3 = sessionStorage.getItem("jas3");
+				if ( jas3 == "1") {tekst = tekst + "<p><b>African lion</b><br />colorfull jacket &euro; 345</p>";}
+				var shirt1 = sessionStorage.getItem("shirt1");
+				if ( shirt1 == "1") {tekst = tekst + "<p><b>Beach</b><br />shirt with beach-prints &euro; 89</p>";}
+				var shirt2 = sessionStorage.getItem("shirt2");
+				if ( shirt2 == "1") {tekst = tekst + "<p><b>Wildlife</b><br />shirt with wildlife-prints &euro; 75</p>";}
+				var shirt3 = sessionStorage.getItem("shirt3");
+				if ( shirt3 == "1") {tekst = tekst + "<p><b>Flower</b><br />shirt with flower-prints &euro; 95</p>";}
+				var jeans1 = sessionStorage.getItem("jeans1");
+				if ( jeans1 == "1") {tekst = tekst + "<p><b>Stone</b><br />stone-washed jeans &euro; 139</p>";}
+				var jeans2 = sessionStorage.getItem("jeans2");
+				if ( jeans2 == "1") {tekst = tekst + "<p><b>Grey</b><br />grey jeans &euro; 159</p>";}
+				var jeans3 = sessionStorage.getItem("jeans3");
+				if ( jeans3 == "1") {tekst = tekst + "<p><b>Dark</b><br />darkblue jeand &euro; 149</p></p>";}
+				var shoe1 = sessionStorage.getItem("shoe1");
+				if ( shoe1 == "1") {tekst = tekst + "<p><b>Infinite</b><br />shoes with red/black-print &euro; 339</p>";}
+				var shoe2 = sessionStorage.getItem("shoe2");
+				if ( shoe2 == "1") {tekst = tekst + "<p><b>Exotic</b><br />shoes with diamands-print &euro; 325</p>";}
+				var shoe3 = sessionStorage.getItem("shoe3");
+				if ( shoe3 == "1") {tekst = tekst + "<p><b>Doll</b><br />shoes your boyfriend likes &euro; 475</p>";}
+				document.getElementById("lijst").innerHTML = tekst;
+			}
+			else
+			{
+				document.getElementById("lijst").innerHTML="Helaas, jouw browser ondersteunt geen WebStorage!";
+			}
+		}
+		);
+	</script>
+	<!-- ingevoegd stukje om panel open te kunnen swipen -->
+	<script>
+	        $(function () {
+	            //dmv swiperight zorgen dat het panel opent met swipen naar rechts
+                $('body').on('swiperight', function () {
+                    //met #producten zorgen dat het panel links opent na swipen
+                    $('#producten').panel('open', '');
+                });
+            }); 
+    </script>
+	<style>
+	.ui-page {background: url(images/shop.jpg);background-position:center center;background-size:100% 100%;}
+	.ui-body {opacity: 0.75;}
+	</style>
+  </head>
+  
+  <body class="ui-mobile-viewport ui-overlay-b">
+		<div id="pag1" data-role="page" data-theme="b" data-url="pag1" tabindex="0" class="ui-page ui-page-theme-b ui-page-footer-fixed ui-page-active" style="padding-bottom: 44px; min-height: 406px;">
+			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+				<a href="#producten" data-icon="bars" data-iconpos="notext" class="ui-link ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext" class="ui-link ui-btn-right ui-btn ui-icon-gear ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">B</a>
+				<h1 class="ui-title" role="heading" aria-level="1">SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>WELKOM in onze online fashion store.</p>
+				<p>Klik links voor een overzicht van al onze producten.</p>
+				<p>Klik rechts voor een overzicht van je eigen shoppinglist.</p>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" role="contentinfo" class="ui-footer ui-footer-fixed slideup ui-bar-inherit">
+				<h3 class="ui-title" role="heading" aria-level="1">© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag2" data-role="page" data-theme="b" data-url="pag2">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<img src="images/jas1.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Monroe</h2>
+				<p>Een schitterend grijs jasje.<br>Voor slechts € 299</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jas1','1')" data-ajax="false">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag3" data-role="page" data-theme="b" data-url="pag3">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/jas2.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Classic</h2>
+				<p>Een schitterend zwart jasje.<br>Voor slechts € 225</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jas2','1')" data-ajax="false">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag4" data-role="page" data-theme="b" data-url="pag4">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="jas3.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>African lion</h2>
+				<p>Een schitterend 'kleurrijk' jasje.<br>Voor slechts € 345</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jas3','1')" data-ajax="false">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag5" data-role="page" data-theme="b" data-url="pag5">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shirt1.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Beach</h2>
+				<p>Een mooi shirt met beach-prints.<br>Voor slechts € 89</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shirt1','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag6" data-role="page" data-theme="b" data-url="pag6">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shirt2.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Wildlife</h2>
+				<p>Een mooi shirt met wildlife-prints.<br>Voor slechts € 75</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shirt2','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag7" data-role="page" data-theme="b" data-url="pag7">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shirt3.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Flower</h2>
+				<p>Een mooi shirt met flower-prints.<br>Voor slechts € 95</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shirt3','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag8" data-role="page" data-theme="b" data-url="pag8">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/jeans1.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Stone</h2>
+				<p>Strakke stone-washed jeans.<br>Voor slechts € 139</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jeans1','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag9" data-role="page" data-theme="b" data-url="pag9">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/jeans2.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Grey</h2>
+				<p>Strakke grijze jeans.<br>Voor slechts € 159</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jeans2','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag10" data-role="page" data-theme="b" data-url="pag10">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/jeans3.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Dark</h2>
+				<p>Strakke donkerblauwe jeans.<br>Voor slechts € 149</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('jeans3','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag11" data-role="page" data-theme="b" data-url="pag11">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shoe1.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Infinite</h2>
+				<p>Schitterende rood/zwarte schoen met hoge hak.<br>Voor slechts € 339</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shoe1','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag12" data-role="page" data-theme="b" data-url="pag12">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shoe2.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Exotic</h2>
+				<p>Schitterende flonkerende schoen met hoge hak.<br>Voor slechts € 325</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shoe2','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+		
+		<div id="pag13" data-role="page" data-theme="b" data-url="pag13">
+			<div data-role="header">
+				<a href="#producten" data-icon="bars" data-iconpos="notext">P</a>
+				<a href="#boodschappenlijst" data-icon="gear" data-iconpos="notext">B</a>
+				<h1>SHOPPEN</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<img src="images/shoe3.jpg" style="max-width:100%;">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<h2>Doll</h2>
+				<p>Van deze schitterende schoen met hoge hak wordt je vriend wild enthousiast.<br>Voor slechts € 475</p>
+				</div>
+				<a href="#pag1" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini ui-btn-inline" data-transition="fade">Home</a>
+				<a href="app6.htm" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-left ui-mini ui-btn-inline" onclick="sessionStorage.setItem('shoe3','1')" rel="external">Die wil ik!</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h3>© INF-actief</h3>
+			</div>
+		</div>
+
+		<div data-role="panel" id="producten" data-position="left" data-display="overlay" data-theme="b" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-b ui-panel-animate ui-panel-open">
+			<div class="ui-panel-inner"><h3>Products</h3><p>Maak uw keuze uit onze fashion collectie:</p><div data-role="collapsible" data-theme="a" data-content-theme="b" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-a ui-mini">Jackets<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h2><div class="ui-collapsible-content ui-body-b ui-collapsible-content-collapsed" aria-hidden="true">
+				
+				<ul data-role="listview" class="ui-listview"> 
+					<li class="ui-li-has-thumb ui-first-child"><a href="#pag2" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jas1.jpg"><h2>Monroe</h2><p>Gray jacket € 299</p></a></li>
+					<li class="ui-li-has-thumb"><a href="#pag3" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jas2.jpg"><h2>Classic</h2><p>Black jacket € 225</p></a></li>
+					<li class="ui-li-has-thumb ui-last-child"><a href="#pag4" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jas3.jpg"><h2>African lion</h2><p>Colorfull jacket € 345</p></a></li>
+				</ul>
+			</div></div><div data-role="collapsible" data-theme="a" data-content-theme="b" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-a ui-mini">Shirts<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h2><div class="ui-collapsible-content ui-body-b ui-collapsible-content-collapsed" aria-hidden="true">
+				
+				<ul data-role="listview" class="ui-listview"> 
+					<li class="ui-li-has-thumb ui-first-child"><a href="#pag5" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shirt1.jpg"><h2>Beach</h2><p>Shirt with beach-prints € 89</p></a></li>
+					<li class="ui-li-has-thumb"><a href="#pag6" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shirt2.jpg"><h2>Wildlife</h2><p>Shirt with wildlife-prints € 75</p></a></li>
+					<li class="ui-li-has-thumb ui-last-child"><a href="#pag7" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shirt3.jpg"><h2>Flower</h2><p>Shirt with flower-prints € 95</p></a></li>
+				</ul>
+			</div></div><div data-role="collapsible" data-theme="a" data-content-theme="b" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-a ui-mini">Jeans<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h2><div class="ui-collapsible-content ui-body-b ui-collapsible-content-collapsed" aria-hidden="true">
+				
+				<ul data-role="listview" class="ui-listview"> 
+					<li class="ui-li-has-thumb ui-first-child"><a href="#pag8" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jeans1.jpg"><h2>Stone</h2><p>Stone-washed jeans € 139</p></a></li>
+					<li class="ui-li-has-thumb"><a href="#pag9" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jeans2.jpg"><h2>Grey</h2><p>Grey jeans € 159</p></a></li>
+					<li class="ui-li-has-thumb ui-last-child"><a href="#pag10" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/jeans3.jpg"><h2>Dark</h2><p>Darkblue jeand € 149</p></a></li>
+				</ul>
+			</div></div><div data-role="collapsible" data-theme="a" data-content-theme="b" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-a ui-mini">Shoes<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h2><div class="ui-collapsible-content ui-body-b ui-collapsible-content-collapsed" aria-hidden="true">
+				
+				<ul data-role="listview" class="ui-listview"> 
+					<li class="ui-li-has-thumb ui-first-child"><a href="#pag11" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shoe1.jpg"><h2>Infinite</h2><p>Shoes with red/black-print € 339</p></a></li>
+					<li class="ui-li-has-thumb"><a href="#pag12" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shoe2.jpg"><h2>Exotic</h2><p>Shoes with diamands-print € 325</p></a></li>
+					<li class="ui-li-has-thumb ui-last-child"><a href="#pag13" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><img src="images/shoe3.jpg"><h2>Doll</h2><p>Shoes your boyfriend likes € 475</p></a></li>
+				</ul>
+			</div></div><a href="#pag1" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Close</a></div>
+			
+			
+			
+			
+			
+		
+		</div>
+		
+		<div data-role="panel" id="boodschappenlijst" data-position="right" data-display="overlay" data-theme="a" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-a ui-panel-animate">
+			<div class="ui-panel-inner"><h3>Shoppinglist</h3><div id="lijst"><p>Op jouw shoppinglist staan:</p></div><a href="#pag1" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Close</a></div>
+			
+			
+		</div>
+  
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div><div class="ui-panel-dismiss" data-panelid="producten" style="height: 450px;"></div><div class="ui-panel-dismiss" data-panelid="boodschappenlijst"></div></body></html>

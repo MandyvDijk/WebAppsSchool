@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/BroodBanket.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+        <!-- zorgen dat de grid meeschaalt en een opmaak heeft-->
+        <style> .ui-block-a, .ui-block-b, .ui-block-c { max-width: 100%; max-height: 100%; background-color: lightgray; text-align:center; border: 1px solid black; padding: 5px;}</style>
+        <!-- script van informatica actief voor schalen plaatjes -->
+        <script>
+            $( document ).on( "pagecreate", function() {
+            $( ".photopopup" ).on({
+                popupbeforeposition: function() {
+                    var maxHeight = $( window ).height();
+                    $( ".photopopup img" ).css( "max-height", maxHeight );
+                    }
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div data-role="page" id="pageone">
+            <div data-role="header">
+                <h1>Peuters leren kleuren</h1>
+             </div>
+            
+        <!-- b staat voor 3 kolommen -->
+        <div class="ui-grid-b">
+            <!-- rij 1 -->
+            <div class="ui-block-a"> <a href="#blokje1" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/blauw.jpg" > </a> </div>
+            <!-- de ui-block-a,b,c zorgen voor kolomverdeleing. door data-rel=popup komt er een popup als je klickt-->
+            <div class="ui-block-b"> <a href="#blokje2" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/geel.jpg" > </a> </div>
+            <div class="ui-block-c"> <a href="#blokje3" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/grijs.jpg" > </a> </div>
+            <!-- rij 2 -->
+            <div class="ui-block-a"> <a href="#blokje4" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/groen.jpg" > </a> </div>
+            <div class="ui-block-b"> <a href="#blokje5" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/oranje.jpg" > </a> </div>
+            <div class="ui-block-c"> <a href="#blokje6" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/paars.jpg" > </a> </div>
+            <!-- rij 3 -->
+            <div class="ui-block-a"> <a href="#blokje7" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/rood.jpg" > </a> </div>
+            <div class="ui-block-b"> <a href="#blokje8" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/roze.jpg" > </a> </div>
+            <div class="ui-block-c"> <a href="#blokje9" data-rel="popup" data-position-to="window" data-transition="fade"> <img src ="images/zwart.jpg" > </a> </div>
+        </div>
+        
+        <!-- div oor popup -->
+        <div id="blokje1" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <!-- plaatje voor popup -->
+            <img src= "images/blauw.jpg">
+            <!-- button om popup te sluiten -->
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <!-- geluidsbestandje toevoegen -->
+            <audio id="blauw" src="audio/blauw.mp3">
+                <!-- melding als browser geluidje niet kan laden -->
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <!-- knopje om geluidje te laten horen -->
+            <button onclick="document.getElementById('blauw').play()">Laat blauw horen</button>
+        </div>
+        
+        <div id="blokje2" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/geel.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="geel" src="audio/geel.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('geel').play()">Laat geel horen</button>
+        </div>
+        
+        <div id="blokje3" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/grijs.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="grijs" src="audio/grijs.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('grijs').play()">Laat grijs horen</button>
+        </div>
+        
+        <div id="blokje4" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/groen.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="groen" src="audio/groen.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('groen').play()">Laat groen horen</button>
+        </div>
+        
+        <div id="blokje5" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/oranje.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="oranje" src="audio/oranje.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('oranje').play()">Laat oranje horen</button>
+        </div>
+        
+        <div id="blokje6" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/paars.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="paars" src="audio/paars.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('paars').play()">Laat paars horen</button>
+        </div>
+        
+        <div id="blokje7" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/rood.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="rood" src="audio/rood.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('rood').play()">Laat rood horen</button>
+        </div>
+        
+        <div id="blokje8" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/roze.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="roze" src="audio/roze.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('roze').play()">Laat roze horen</button>
+        </div>
+        
+        <div id="blokje9" class="photopopup" data-role="popup" data-theme="b" data-overlay-theme="b" data-corners="false">
+            <img src ="images/zwart.jpg" >
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" href="#" data-rel="back">Close</a>
+            <audio id="zwart" src="audio/zwart.mp3">
+                <p>Uw browser ondersteunt geen audio-tag</p>
+            </audio>
+            <button onclick="document.getElementById('zwart').play()">Laat zwart horen</button>
+        </div>
+    </body>
+</html>
