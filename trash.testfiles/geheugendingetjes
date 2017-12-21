@@ -1,0 +1,185 @@
+//gekopieerd uit oude workspace + theorie stoas
+
+Dit formatje is om mezelf werk te besparen bij het opzetten van een nieuw script
+Deze kan ik dan in een keer naar een nieuw bestand kopieren, ipv dat ik het daar in delen naar toe 
+kopieer en plak vanuit een eerder gemaakt script.
+Verder staan hier ook regels code die ik moeilijk vind, om op terug te kijken 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/greenbluethingy.css" />
+        <link rel="stylesheet" href="css/themes/greenbluethingy.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    
+    <body>
+        <div data-role="header">
+            <h1>titel</h1>
+        </div>
+        
+        <form = action ".php" method = "post">
+            <input type="text" name="input"/>
+            <input type= "submit" name="verzend" value="STUUR">
+        </form>
+        
+         <?php
+         if(isset($_POST["verzend"])){
+         
+         };
+         ?>
+        
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/BroodBanket.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    
+    <body>
+        
+        
+    </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>.php</title>
+    </head>
+    <body>
+        <form = action ".php" method = "post">
+            tekst <input type="text" name="input"/>
+            <input type= "submit" name="verzend" value="STUUR">
+        </form>
+        
+         <?php
+         if(isset($_POST["verzend"])){
+         
+         };
+         ?>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    </body>
+</html>
+
+<!-- zorgen dat plaatje schaalt, style tag binnen head tag-->
+<style> img {max-width: 100%; max-height: 100%;} </style>
+
+Een webpagina van een WebApp kent een standaard opbouw (template).
+Een single-page template ziet er zo uit:
+
+<div data-role="page">
+  <div data-role="header"> Hier staat de inhoud van de kop </div>
+  <div role="main" class="ui-content"> Hier staat de inhoud van de webpagina </div>
+  <div data-role="footer"> Hier staat de inhoud van de onderbalk </div> </div>
+
+Een multi-page template ziet er zo uit:
+
+<div data-role="page" id="pag1">
+  <div data-role="header"> ... </div>
+  <div role="main" class="ui-content"> ... </div>
+  <div data-role="footer"> ... </div>
+</div>
+<div data-role="page" id="pag2">
+  <div data-role="header"> ... </div>
+  <div role="main" class="ui-content"> ... </div>
+  <div data-role="footer"> ... </div>
+</div>
+
+Bij een multi-page template worden alle pagina's in één keer opgehaald.
+Je kunt tussen de pagina's wisselen met:
+
+<a href="#pag2">Ga naar pagina 2</a>
+<a href="#pag1">Ga naar pagina 1</a>
+
+responsive img -> binnen head tag bovenaan
+<script src="src/jquery.mobile-1.4.5.min.js"></script>
+
+schalen
+style = "max-width:100%;"
+
+hyperlink knop
+class = "ui-btn" 
+ronde hoeken
+class = "ui-corner-all" 
+beide:
+class = "ui-btn ui-corner-all"
+
+pagina overgangen
+data-transition = "slide"
+data-transition = "turn"
+
+git commit ...
+git push
+
+radio input
+<input type = "radio" name= "naam van var" value = "optie 1">de tekst van de eerste optie hier
+<input type = "radio" name= "naam van var" value = "optie 2">de tekst van de tweede optie hier
+enz
+
+de lege versie:
+<input type = "radio" name= "" value = "">
+
+comment html: 
+<!-- x -->
+comment php:
+//x
+
+plaatje plakken
+echo "<img src = 'Webaders van plaatje'>";
+
+link maken
+<a href= " "> </a>
+
+for loop syntax
+for ($x = 0; $x <= max getal; $x++) {
+    echo "bv; The number is: $x <br>";
+}
+
+switch gedoe maken:
+switch($Var){
+case "" : 
+    ;
+break;
+default:
+    ;
+};
+
+variabele input ophalen
+$InputVar = $POST_["input"];
+
+random getal genereren tussen x en y:
+$Getal = rand(x,y);
+
+sessie variabelen 
+
+session_start();
+$_SESSION[""]= $

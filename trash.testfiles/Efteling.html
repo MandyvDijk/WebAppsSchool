@@ -1,0 +1,174 @@
+<!-- broncode gekopieerd van efteling webapp op inf. actief-->
+<!DOCTYPE html>
+    <html class="ui-mobile"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>EFTELING</title>
+            <!-- verbinden met stylesheets -->
+        <link rel="stylesheet" href="css/themes/BroodBanket.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+        <!-- verbinden met scripts-->
+        <script src="src/jquery-1.11.1.min.js"></script> 
+        <script src="src/jquery.mobile-1.4.5.min.js"></script>
+<style>
+.ui-page {background: url(efteling.jpg);background-position:center center;background-size:100% 100%;}
+.ui-bar {padding:0px;}
+.ui-body {opacity: 0.75;}
+</style>
+  </head>
+  <body class="ui-mobile-viewport ui-overlay-a">
+		<div id="home" data-role="page" data-url="home" tabindex="0" class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-footer-fixed ui-page-active" style="padding-top: 44px; padding-bottom: 34px; min-height: 372px;">
+			<div data-role="header" data-position="fixed" data-theme="b" role="banner" class="ui-header ui-header-fixed slidedown ui-bar-b">
+				<h1 class="ui-title" role="heading" aria-level="1">EFTELING</h1>
+			</div>
+			  <div data-role="header" class="ui-content">
+    <p>Click on one of the the buttons to open the Panel - Concretepage</p>
+    <a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Overlay Panel</a>
+     <a href="#revealPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Reveal Panel</a>
+      <a href="#pushPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Push Panel</a>
+  </div>
+			<!-- Het menu -->
+			<!-- div aanmaken voor het panel -->
+			<div data-role="panel" id="menu" >
+  <h2>Panel Header..</h2>
+  <p>Some text..</p>
+  <h2>Panel Footer</h2>
+			</div>
+			
+			  <div data-role="panel" id="revealPanel" data-display="reveal"> 
+    <h2>Reveal Panel</h2>
+    <p>You can close the panel by clicking outside the panel</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+  </div> 
+			
+			<div class="ui-bar ui-bar-b ui-footer ui-footer-fixed slideup ui-bar-inherit" data-role="footer" data-position="fixed" role="contentinfo">
+				<div data-role="navbar" class="ui-navbar" role="navigation">
+				<ul class="ui-grid-b">
+					<li class="ui-block-a"><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li class="ui-block-b"><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li class="ui-block-c"><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="attracties" data-role="page" data-url="attracties">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" href="#">T</a>
+				<h1>ATTRACTIES</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Hier staat alle informatie over de verschillende attracties.</p>
+				</div>
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="sprookjesbos" data-role="page" data-url="sprookjesbos">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" href="#">T</a>
+				<h1>SPROOKJESBOS</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Hier staat alle informatie over het sprookjesbos.</p>
+				</div>
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="restaurants" data-role="page" data-url="restaurants">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" href="#">T</a>
+				<h1>RESTAURANTS</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Hier staat alle informatie over de verschillende restaurants.</p>
+				</div>
+				
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="hotels" data-role="page" data-url="hotels">
+			<div data-role="header" data-position="fixed" data-theme="b">	
+				<a data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" href="#">T</a>
+				<h1>HOTELS</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Hier staat alle informatie over de verschillende hotels.</p>
+				</div>
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="help" data-role="page" data-url="help">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<h1>HELP</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Even de weg kwijt? Hier staan verschillende tips!</p>
+				</div>
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="contact" data-role="page" data-url="contact">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<h1>CONTACT</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<div class="ui-body ui-body-b ui-corner-all">
+				<p>Hier staat het contactformulier.</p>
+				</div>
+			</div>
+			<div class="ui-bar ui-bar-b" data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+				<ul>
+					<li><a href="#home" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-left">Home</a></li>
+					<li><a href="#help" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-left">Help</a></li>
+					<li><a href="#contact" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-left">Contact</a></li>
+				</ul>	
+				</div>
+			</div>
+		</div>
+  
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

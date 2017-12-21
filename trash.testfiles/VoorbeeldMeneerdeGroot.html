@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Mobile page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/themes/test.css" />
+  <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="css/themes/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="src/jquery-1.11.1.min.js"></script> 
+  <script src="src/jquery.mobile-1.4.5.min.js"></script> 
+</head>
+<body>
+  
+<!-- PAGINA 1: HOME !-->
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Bakkerij 't Broodje</h1>
+  </div>
+<div data-role="header">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#pageone">Home</a></li>
+      <li><a href="#pagetwo">Brood</a></li>
+      <li><a href="#pagethree">Banket</a></li>
+    </ul>
+  </div>
+</div>
+  <div data-role="main" class="ui-content" style="text-align:center;">
+    <img src="images/taart.jpg">
+    <p>Klik hier voor informatie over onze producten:</p>
+    <a href="#pagetwo" data-transition="flip" ><input type="button" value="Ons Brood" data-icon="action"></a>  <br>
+	<a href="#pagethree" data-transition="flip"><input type="button" value="Ons Banket" data-icon="action"></a>
+  </div>
+  
+  <div data-role="footer">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="#pagefour">Contact</a></li>
+      <li><a href="#pagefive">Aanbiedingen</a></li>
+      <li><a href="#pagesix">Taarten</a></li>
+    </ul>
+  </div>
+</div>
