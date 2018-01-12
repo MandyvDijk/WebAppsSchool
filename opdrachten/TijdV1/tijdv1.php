@@ -19,9 +19,11 @@
         </div>
         
         <div role="main" class="ui-content">
+            <!-- form voor het verzenden van de input -->
             <form = action "tijdv1.php" method = "post">
                 <div>
                     <label for="uren">Aantal uren:</label>
+                    <!--type= range voor slider -->
                     <input type="range" name="uren" id="uren" data-highlight="true" min="0" max="23" value="1">
                 </div>
                 <div>
@@ -37,16 +39,17 @@
         </div>
         
         <?php
+            //controlleren of op verzend gedrukt is
             if(isset($_POST["verzend"])){
-         
+                //var ophalen
                 $uren = $_POST["uren"];
                 $minuten = $_POST["minuten"];
                 $seconden = $_POST["seconden"];
-                
+                //rekenen
                 $secondenuren = $uren * 3600;
                 $secondenminuten = $minuten * 60;
                 $secondentotaal = $secondenuren + $secondenminuten + $seconden;
-                
+                //uitkomst echo'en
                 echo "<font style='color:#FFF; ui-content; margin-left:10px; margin-right:10px;'>$uren uren, $minuten minuten en $seconden seconden = $secondentotaal seconden.</font>";
          
             };
